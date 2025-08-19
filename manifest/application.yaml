@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: group5-app
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/jpsankari/ManifestRepo.git"
+    targetRevision: main
+    path: manifest/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: group5-ns
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      prune: true
+      selfHeal: true
