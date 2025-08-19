@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: "https://github.com/jpsankari/ManifestRepo.git"
     targetRevision: main
-    path: manifest
+    path: charts
   destination:
     server: https://kubernetes.default.svc
     namespace: group5-ns
